@@ -24,12 +24,29 @@ a:hover {
 
 body {
   margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
-}
+  
+}.reg{
+  width: 100%;
+  }
 
+  .reg input{
+    width: 90%;
+    height: 10%;
+    border-radius:10px ;
+    border: 1px solid rgb(38, 37, 51);
+  }
+
+.conteiner1{
+  margin: auto;
+  height: 400px;
+  width: 40%;
+
+  border-radius: 30px;
+  border: 2px solid rgba(44, 39, 54, 0.651);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  /* Aplicamos un filtro de desenfoque al borde */
+ 
+}
 h1 {
   font-size: 3.2em;
   line-height: 1.1;

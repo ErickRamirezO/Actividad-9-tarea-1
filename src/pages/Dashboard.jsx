@@ -19,7 +19,8 @@ const Registration = () => {
 
   return (
     <div>
-      <h2>Dashboard</h2>
+      <h2></h2>
+
       <button className="btn btn-danger mb-2" onClick={logOut}>Salir</button>
     </div>
   );
