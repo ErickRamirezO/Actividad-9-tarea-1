@@ -14,21 +14,15 @@ const Registration = () => {
     e.preventDefault();
     const email = document.getElementById('email').value;
     const password = document.getElementById('password').value;
-
     console.log("Datos", email, password);
-    registrarUsurio(email,password);
-
-    
+    registrarUsurio(email,password); 
   }
-
   async function registrarUsurio(email,password){
-    
     const infoUsuario =await createUserWithEmailAndPassword(auth, email, password).then((userCredential) => {
       // Signed in 
       const user = userCredential.user;
       // ...
     })
-
   }
 
   return (
