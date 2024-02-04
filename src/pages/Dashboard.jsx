@@ -4,6 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import { signOut } from 'firebase/auth';
 import { db } from "../config/firebase";
 import { collection, addDoc, query, orderBy, getDocs, doc, updateDoc, deleteDoc } from "firebase/firestore";
+import Swal from 'sweetalert2';
 
 const Registration = () => {
   const [error, setError] = useState(null);
@@ -26,6 +27,16 @@ const Registration = () => {
 
   const addItem = async () => {
     try {
+
+      if (!formData.movieTitle || !formData.author) {
+        Swal.fire({
+          icon: 'error',
+          title: 'Campos Vacíos',
+          text: 'Por favor, complete ambos campos.',
+        });
+        return;
+      }
+
       if (editingItem) {
         // Editar el elemento existente
         const itemDocRef = doc(db, "movies", editingItem.id);
@@ -43,6 +54,11 @@ const Registration = () => {
 
       fetchItems();
     } catch (error) {
+      Swal.fire({
+        icon: 'error',
+        title: 'Error al subir datos',
+        text: error,
+      });
       console.log('Error al subir datos', error);
     }
   }
@@ -142,7 +158,7 @@ const Registration = () => {
         </tbody>
       </table>
 
-      <button className="btn btn-danger" onClick={logOut}>Salir</button>
+      <button className="btn btn-danger" onClick={logOut}>Cerrar sesión</button>
     </div>
   );
 };

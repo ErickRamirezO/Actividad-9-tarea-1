@@ -1,6 +1,7 @@
 import { auth, googleProvider } from "../config/firebase";
 import { createUserWithEmailAndPassword, signInWithPopup, signOut , signInWithEmailAndPassword} from "firebase/auth";
 import { useState } from "react";
+import Swal from 'sweetalert2';
 import { useNavigate } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../index.css'
@@ -9,31 +10,23 @@ export const Auth = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
-  console.log(auth?.currentUser?.email);
-  console.log(auth?.currentUser?.photoURL);
-
-  const signIn = async () => {
-    try {
-      await createUserWithEmailAndPassword(auth, email, password);
-    } catch (err) {
-      console.error(err);
-    }
-  };
 
   const signInWithGoogle = async () => {
     try {
       await signInWithPopup(auth, googleProvider);
+      Swal.fire({
+        icon: 'success',
+        title: 'Inicio de sesión exitoso',
+        showConfirmButton: false,
+        timer: 1000,
+      });
       navigate('/dashboard');
     } catch (err) {
-      console.error(err);
-    }
-  };
-
-  const logOut = async () => {
-    try {
-      await signOut(auth);
-    } catch (err) {
-      console.error(err);
+      Swal.fire({
+        icon: 'error',
+        title: 'Error de Inicio de Sesión',
+        text: err.message,
+      });
     }
   };
 
@@ -42,20 +35,35 @@ export const Auth = () => {
     const email = document.getElementById('email').value;
     const password = document.getElementById('password').value;
     console.log("Datos", email, password);
-    signInWithEmailAndPassword(auth, email,password);
+    signInWithEmailAndPassword(auth, email,password)
+    .then(() => {
+      Swal.fire({
+        icon: 'success',
+        title: 'Inicio de sesión exitoso',
+        showConfirmButton: false,
+        timer: 1000,
+      });
+    })
+    .catch((err) => {
+      Swal.fire({
+        icon: 'error',
+        title: 'Error de Inicio de Sesión',
+        text: err.message,
+      });
+    });
   }
 
   return (
     <div className="container mt-5 conteiner1">
-      <h1>BIENVENIDO</h1><br />
+      <h1>Bienvenido</h1><br />
       <div className="mb-3">
-        <input id="email" className="form-control" placeholder="Email.." onChange={(e) => setEmail(e.target.value)} />
+        <input id="email" className="form-control" placeholder="Correo..." onChange={(e) => setEmail(e.target.value)} />
       </div>
       <div className="mb-3">
         <input id="password"
           className="form-control"
           type="password"
-          placeholder="Password.."
+          placeholder="Contraseña..."
           onChange={(e) => setPassword(e.target.value)}
         />
       </div>

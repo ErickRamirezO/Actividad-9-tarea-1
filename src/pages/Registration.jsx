@@ -41,8 +41,7 @@ const Registration = () => {
 
   return (
     <div className='container1 reg'>
-      <h1>Registration</h1>
-      {error && <p style={{ color: 'red' }}>{error}</p>}
+      <h1>Registro</h1>
       <form>
         <label>Email:</label><br/>
         <input type="email" id="email" />
@@ -50,9 +49,9 @@ const Registration = () => {
         <label>Password:</label><br/>
         <input type="password" id="password" />
         <br/><br/>
-        <button className="btn btn-success mb-2" onClick={handleRegistration}>Register</button><br/>
+        <button className="btn btn-success mb-2" onClick={handleRegistration}>Registrarse</button><br/>
       </form>
-      <a href="/"><button className="btn btn-primary mb-2">Return to Home</button></a>
+      <a href="/"><button className="btn btn-primary mb-2">Regresar al Inicio</button></a>
     </div>
   );
 };
