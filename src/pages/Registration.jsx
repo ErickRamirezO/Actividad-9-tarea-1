@@ -40,9 +40,10 @@ const Registration = () => {
   }
 
   return (
-    <div className='container mt-5 conteiner1 reg'>
-      <h1>Registration</h1>
-      {error && <p style={{ color: 'red' }}>{error}</p>}
+
+    <div className='mt-5 conteiner1 reg'>
+      <h1>Registro</h1>
+
       <form>
         <label>Correo electronico:</label>
         <input  className="form-control" placeholder="Correo electrónico "type="email" id="email" />
@@ -50,9 +51,9 @@ const Registration = () => {
         <label>Password:</label>
         <input  className="form-control" placeholder="Password.." type="password" id="password" />
         <br/><br/>
-        <button className="btn btn-success mb-2" onClick={handleRegistration}>Register</button><br/>
+        <button className="btn btn-success mb-2" onClick={handleRegistration}>Registrarse</button><br/>
       </form>
-      <a href="/"><button className="btn btn-primary mb-2">Return to Home</button></a>
+      <a href="/"><button className="btn btn-primary mb-2">Regresar al Inicio</button></a>
     </div>
   );
 };

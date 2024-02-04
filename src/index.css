@@ -25,9 +25,7 @@ a:hover {
 body {
   margin: 0;
   
-}.reg{
-
-  }
+}
 
   
 
@@ -41,6 +39,10 @@ body {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
   /* Aplicamos un filtro de desenfoque al borde */
  
+}
+.conteiner1 form{
+  width: 90%;
+  margin: auto;
 }
 h1 {
   font-size: 3.2em;
