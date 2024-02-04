@@ -14,7 +14,7 @@ import {getAuth, GoogleAuthProvider} from 'firebase/auth'
 ```
 
 ## Configuración de la autenticación 
-![Dentro de firebase debemos habilitar los proveedores que queramos, en este caso solo se usa el proveedor de email y Google](https://github.com/ErickRamirezO/Actividad-9-tarea-1/tree/main/images/proveedores.JPG) 
+![Dentro de firebase debemos habilitar los proveedores que queramos, en este caso solo se usa el proveedor de email y Google](images/proveedores.JPG) 
 
 En código tenemos que importar los componentes siguientes:
 ```jsx
