@@ -60,5 +60,5 @@ npm i
 ```
 Iniciamos nuestro servidor de desarrollo
 ```bash
-npm i
+npm run dev
 ```
