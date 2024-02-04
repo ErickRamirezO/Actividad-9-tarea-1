@@ -98,10 +98,14 @@ const Registration = () => {
   };
 
   return (
-    <div className="container mt-5">
+    
+    <div className="container mt-2">
+      <div className="salir">
+      <button className="btn btn-danger" onClick={logOut}>Salir</button>
+      </div>
       <h2 className="text-center mb-4">Lista de Películas</h2>
 
-      <form onSubmit={(e) => { e.preventDefault(); addItem(); }} className="mb-4">
+      <form  onSubmit={(e) => { e.preventDefault(); addItem(); }} className="mb-4 formulario">
         <div className="mb-3">
           <label className="form-label">Título de la Película:</label>
           <input type="text" name="movieTitle" value={formData.movieTitle} onChange={handleInputChange} className="form-control" />
@@ -142,7 +146,7 @@ const Registration = () => {
         </tbody>
       </table>
 
-      <button className="btn btn-danger" onClick={logOut}>Salir</button>
+      
     </div>
   );
 };

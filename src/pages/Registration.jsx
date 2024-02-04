@@ -26,15 +26,15 @@ const Registration = () => {
   }
 
   return (
-    <div className='container1 reg'>
+    <div className='container mt-5 conteiner1 reg'>
       <h1>Registration</h1>
       {error && <p style={{ color: 'red' }}>{error}</p>}
       <form>
-        <label>Email:</label><br/>
-        <input type="email" id="email" />
-        <br/><br/>
-        <label>Password:</label><br/>
-        <input type="password" id="password" />
+        <label>Correo electronico:</label>
+        <input  className="form-control" placeholder="Correo electrónico "type="email" id="email" />
+        <br/>
+        <label>Password:</label>
+        <input  className="form-control" placeholder="Password.." type="password" id="password" />
         <br/><br/>
         <button className="btn btn-success mb-2" onClick={handleRegistration}>Register</button><br/>
       </form>

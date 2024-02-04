@@ -49,9 +49,11 @@ export const Auth = () => {
     <div className="container mt-5 conteiner1">
       <h1>BIENVENIDO</h1><br />
       <div className="mb-3">
+      <label>Correo electrónico:</label>
         <input id="email" className="form-control" placeholder="Email.." onChange={(e) => setEmail(e.target.value)} />
       </div>
       <div className="mb-3">
+      <label>Password:</label>
         <input id="password"
           className="form-control"
           type="password"
