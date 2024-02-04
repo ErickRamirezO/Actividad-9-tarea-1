@@ -48,7 +48,7 @@ const signInWithGoogle = async () => {
   };
 ```
 
-Si queremos autenticarnos mediante un correo y contraseña debemos usar la función signInWithEmailAndPassword
+Si queremos autenticarnos mediante un correo y contraseña debemos usar la función signInWithEmailAndPassword y enviar como parámetro auth, correo y la contraseña obtenidos del formulario
 ```js
 signInWithEmailAndPassword(auth, email,password);
 ```
